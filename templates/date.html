@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Trade Holding</title>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="height: 300px; margin-top: 2em"></div>
+
+
+<button id="getcsv">Get CSV In Console</button>
+
+</head>
+<body>
+    <h1 style="color: black;" style="align-items: center;"> QUEST TRADE </h1>
+    <script>
+        var chart = new Highcharts.StockChart({
+
+            chart: {
+                renderTo: 'container'
+            },
+        
+            navigator: {
+                series: {
+                    includeInDataExport: false
+                }
+            },
+            series: [{
+                name: "Quest Trade Holdings",
+                data: [-96.6,96.5,0,0,0,0,0,-53.2,-57.9,-103.31,-86.54,-66.16,-84.4907,-84.4907,-84.4907,-84.4907,-73.2407,-80.83], //All Zero Values is Fake Data
+                pointStart: Date.UTC(2021, 4, 9),
+                pointInterval: 24 * 36e5
+            }],
+        
+            exporting: {
+                csv: {
+                    dateFormat: '%Y-%m-%d'
+                }
+            }
+        
+        });
+        
+        document.getElementById('getcsv').addEventListener('click', function () {
+            console.log(chart.getCSV())
+            console.log("All Zero Values are Fake Data")
+            //alert(chart.getCSV());
+        });
+        
+    </script>
+</body>
+</html>
