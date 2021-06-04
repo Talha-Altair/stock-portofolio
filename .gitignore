@@ -2,3 +2,7 @@ symbols.json
 
 __pycache__/
 
+templates/bar_chart.html
+
+templates/line_chart.html
+

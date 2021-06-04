@@ -17,6 +17,7 @@
 <body>
     <h1 style="color: black;" style="align-items: center;"> QUEST TRADE </h1>
     <script>
+        var pnl_list = JSON.parse('{{pnl_list|tojson}}')
         var chart = new Highcharts.StockChart({
 
             chart: {
@@ -30,7 +31,7 @@
             },
             series: [{
                 name: "Quest Trade Holdings",
-                data: [-96.6,96.5,96.5,96.5,96.5,96.5,96.5,-53.2,-57.9,-103.31,-86.54,-66.16,-84.4907,-84.4907,-84.4907,-84.4907,-73.2407,-80.83,-66.3607,-66.3607,-66.3607,-66.3607,-59.3607,-75.1107,-75.1107,-52.4207], //All Zero Values is Fake Data
+                data: pnl_list, //All Zero Values is Fake Data
                 pointStart: Date.UTC(2021, 4, 9),
                 pointInterval: 24 * 36e5
             }],
